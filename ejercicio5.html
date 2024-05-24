@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>Calcular un programa que permita calcular los importes y pago total de los servicios a sus clientes. Se ingresan el paquete turístico, la cantidad de personas y la forma de pago (al contado, con tarjeta y transferencia). El precio por persona por paquete turístico varía: Colca = S/. 550, Cusco= S/. 700, Máncora = S/. 450, cualquier otro destino = S/. 440. Además, se cobrará por persona, S/. 140 por seguro y S/. 150 por traslados. Todos sin excepción pagan un impuesto equivalente al 2% del costo por paquete turístico. A los clientes que paguen al contado se les descontará el 10% en el total y a los que paguen con tarjeta de crédito un 5% del total. Hallar y mostrar todos los pagos y el monto final.</h3>
+
+        <div id="resultados">
+        <script>   
+            //Declaración de variables
+                var paqturis,cant,metodo_pago,pago_persona,costo_persona,costo_grupo,impuesto,descuento,pago_total,costo_con_impuesto;
+                
+            //Fase de lectura/escritura
+            paqturis=(prompt("Ingrese el destino: Colca/Cusco/Mancora/Otro"));
+            cant=parseInt(prompt("Ingrese la cantidad de personas"));
+            metodo_pago=(prompt("Ingrese la forma de pago: Contado/Credito/Transferencia"));
+
+            //Fase del procesamiento de datos
+
+            if (paqturis.toUpperCase()=="COLCA") {
+                pago_persona=550;
+            } else {
+                if (paqturis.toUpperCase()=="CUSCO") {
+                    pago_persona=700;
+                } else {
+                    if (paqturis.toUpperCase()=="MANCORA") {
+                        pago_persona=450;
+                    } else {
+                        pago_persona=440;
+                    }
+                }
+            }
+            costo_persona=pago_persona+140+150;
+            costo_grupo=costo_persona*cant;
+            impuesto=pago_persona*0.02;
+            costo_con_impuesto=costo_grupo+(impuesto*cant);
+
+
+            if (metodo_pago.toUpperCase()=="CONTADO") {
+                descuento=costo_con_impuesto*0.10;
+            } else {
+                if (metodo_pago.toUpperCase()=="CREDITO") {
+                    descuento=costo_con_impuesto*0.05;
+                } else {
+                    descuento=0;
+                }
+            }
+            pago_total=costo_con_impuesto-descuento;
+
+            //Fase de salida
+            document.write("====== CALCULO DE PAQUETES ====== <br>")
+            document.write("Paquete turistico: "+paqturis+"<br>")
+            document.write("Pago por persona del paquete: "+pago_persona+"<br>")
+            document.write("Pago del 2% de impuesto al paquete: S/"+impuesto+"<br>")
+            document.write("Pago del seguro: S/140 <br>")
+            document.write("Pago del traslado: S/150 <br>")
+            document.write("Descuento por metodo de pago: "+descuento.toFixed(2)+"<br>")
+            document.write("Pago total: S/"+pago_total+"<br>")
+            document.write("======= FIN ========")
+
+
+
+            </script>
+
+
+
+
+        </div>
+    </div>
+</body>
+</html>

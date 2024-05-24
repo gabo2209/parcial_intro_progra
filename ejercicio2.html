@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>Un trabajador de cierta empresa recibe un sueldo mensual que está determinado por el número de horas que trabaja durante el mes y el valor en soles por hora. Asimismo, el valor por hora se incrementa en un 60% para todas las horas a partir de las 50 horas. Calcule y muestre el sueldo que le corresponde al trabajador de esta empresa.  </h3>
+
+        <div id="resultados">
+            <script>
+                //Declaracion de variables
+                var horas,horas_normal,horas_extra,sueldo,pago_extra;
+
+                //Fase de lectura-escritura
+                horas=parseInt(prompt("Ingrese la cantidad de horas trabajadas en el mes"));
+                horas_normal=parseInt(prompt("Ingrese el pago por horas en soles"));
+                
+                //Fase de procesamiento de datos
+
+
+                if (horas>=50) {
+                    horas_extra=horas-50;
+                    pago_extra=horas_extra*(horas_normal*1.60);
+                    pago_normal=(horas-horas_extra)*horas_normal;
+                    sueldo=pago_normal+pago_extra;
+                } else {
+                    sueldo=horas*horas_normal;
+                }
+
+                //Fase de salida
+                document.write("======= Pago del trabajo del mes ========="+"<br><br>")
+                document.write("Suelto total: S/"+sueldo+"<br><br>");
+                document.write("============= Fin ==============")
+                
+
+            </script>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>Diseñar un programa que permita ingresar la edad de una cierta persona, y muestre:
+            •	el mensaje de NIÑO si la edad es hasta 10; 
+            •	el mensaje “PUBER” si la edad es mayor que 10 y menor o igual 15; 
+            •	el mensaje “ADOLESCENTE” si la edad es mayor que 15 y menor o igual 19; 
+            •	el mensaje “JOVEN” si la edad es mayor que 19 y menor o igual 26; 
+            •	el mensaje “ADULTO” si la edad es mayor que 26 y menor o igual 65; 
+            •	y el mensaje “ANCIANO” si la edad es mayor que 65.
+            </h3>
+
+        <div id="resultados">
+        <script>   
+            //Declaración de variables
+                var edad,msj;
+                
+            //Fase de lectura/escritura
+            edad=parseInt(prompt("Ingrese su edad"));
+
+            //Fase del procesamiento de datos
+
+            if (edad<=10) {
+                msj="Eres un NIÑO";
+            } else {
+                if (edad<=15) {
+                    msj="Eres un PUBER";
+                } else {
+                    if (edad<=19) {
+                        msj="Eres ADOLESCENTE";
+                    } else {
+                        if (edad<=26) {
+                            msj="Eres JOVEN"
+                        } else {
+                            if (edad<=65) {
+                                msj="Eres ADULTO"
+                            } else {
+                                msj="Eres ANCIANO"
+                            }
+                        }
+                        }
+                    }
+                }
+
+                //Fase de salida
+                document.write("====== EDAD ====== <br><br>")
+                document.write(""+msj+"<br>")
+                document.write("<br> ======= FIN ========")
+
+
+
+            </script>
+
+
+
+
+        </div>
+    </div>
+</body>
+</html>

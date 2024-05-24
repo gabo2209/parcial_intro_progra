@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>En una tienda de ropa el precio de cada camisa por unidad es de S/.60, sin embargo, si la compra es partir de un cuarto de docena el precio se reduce en un 10%. Diseñe un programa que lea el número de camisas compradas y muestre como resultado el importe de la compra, el descuento en caso se diera y el costo final que se pagara por las camisas.  </h3>
+
+        <div id="resultados">
+            <script>
+                //Declaracion de variables
+                var desc_monto,cant,importe,costo_fin;
+
+                //Fase de lectura-escritura
+                cant=parseInt(prompt("Ingrese la cantidad de camisas compradas"));
+
+                //Fase de procesamiento de datos
+                importe=cant*60;
+
+                if (cant>=3) {
+                    desc_monto=importe*0.10;
+                } else {
+                    desc_monto=0;
+                }
+                costo_fin=importe-desc_monto;
+
+                //Fase de salida
+                document.write("======= Precio de las camisas ========="+"<br>")
+                document.write("Importe de la compra: S/"+importe+"<br>")
+                document.write("Descuento en soles: S/"+desc_monto+"<br>")
+                document.write("Precio final: S/"+costo_fin+"<br>");
+                document.write("============= Fin ==============")
+                
+
+            </script>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

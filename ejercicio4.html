@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>Escribir un Programa que calcule 4 áreas: 1-cuadrado, 2-rectángulo, 3-triángulo y 4-círculo. El programa deberá solicitar para cada caso el ingreso de los datos necesarios para la definición de cada área, en caso se ingrese una opción diferente envié el mensaje de que la operación no está permitida. (considere el valor de la función de Math.PI para el cálculo del área del circulo Math.PI=3.141592653589793).</h3>
+
+        <div id="resultados">
+        <script>
+            var lado_cuadrado,largo_rectan,ancho_rectan,base_trian,alt_trian,radio_circ,a1,a2,a3,a4;
+    
+            lado_cuadrado=parseInt(prompt("Ingrese el lado del cuadrado"));
+            largo_rectan=parseInt(prompt("Ingrese el largo del rectángulo"));
+            ancho_rectan=parseInt(prompt("Ingrese el ancho del rectángulo"));
+            base_trian=parseInt(prompt("Ingrese la base del triángulo"));
+            alt_trian=parseInt(prompt("Ingrese la altura del triángulo"));
+            radio_circ=parseInt(prompt("Ingrese el radio del círculo"));
+            
+            a1=lado_cuadrado*lado_cuadrado;
+            a2=largo_rectan*ancho_rectan;
+            a3=(base_trian*alt_trian)/2;
+            a4=3.141592653589793*(radio_circ*radio_circ);
+    
+            if(base_trian==alt_trian) {
+                document.write("La operación no está permitida");
+            }
+            else {
+                document.write("Área del cuadrado: "+a1+"<br>");
+                document.write("Área del rectángulo: "+a2+"<br>");
+                document.write("Área del triángulo: "+a3+"<br>");
+                document.write("Área del círculo: "+a4);
+            }
+        </script>
+       
+        </div>
+    </div>
+</body>
+</html>
